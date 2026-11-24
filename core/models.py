@@ -1,6 +1,7 @@
 from dataclasses import dataclass, asdict
+# standard structure for packaging process information from the kernel to the GUI
+# test with 3 states S,R,T
 
-# quy dinh cau truc chuan de dong goi thong tin cua 1 tien trinh từ kernel lên gui
 @dataclass
 class ProcessInfo:  
     pid: int
@@ -16,7 +17,6 @@ class ProcessInfo:
     def to_dict(self) -> dict:
         return asdict(self)
 
-# test voi 3 trang thai S,R,T
 def get_mock_processes() -> list[ProcessInfo]:
     return [
         ProcessInfo(
